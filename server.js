@@ -2,6 +2,7 @@ const express = require('express')
 const path=require('path')
 const session =  require('express-session')
 const passport = require('./passport')
+const PORT = process.env.PORT || 8877
 const {
   db
 } = require('./db')
@@ -42,7 +43,7 @@ app.get('/', (req, res)  => {
 
 db.sync()
   .then(() => {
-    app.listen(8877, () => {
-      console.log('Started on http://localhost:8877')
-    })
+    app.listen(PORT,()=>{
+      console.log('server satrted' + PORT)
+  })
   })
