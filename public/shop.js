@@ -19,13 +19,13 @@ $.post('/api/products',{
 }
 
 function addcart(name,manufacturer,price){
-  console.log(product.name);
-  console.log(product.manufacturer);
   $.post('/api/carts',{
     name:name,
     manufacturer:manufacturer,
     price:price
   })
+    window.alert("added " + "product " + "to cart")
+
 }
 function createproductcard(product){
 return $(` <div class="col-4 card mx-2 p-4">
